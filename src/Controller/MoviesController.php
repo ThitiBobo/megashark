@@ -6,6 +6,10 @@ use App\Controller\AppController;
 /**
  * Movies Controller
  *
+<<<<<<< HEAD
+=======
+ * @property \App\Model\Table\MoviesTable $Movies
+>>>>>>> parent of f8c29a0... remove useless code
  *
  * @method \App\Model\Entity\Movie[] paginate($object = null, array $settings = [])
  */

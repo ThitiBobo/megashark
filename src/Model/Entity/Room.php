@@ -4,16 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Movie Entity
+ * Room Entity
  *
  * @property int $id
  * @property string $name
- * @property string $description
- * @property int $duration
+ * @property int $capacity
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
-class Movie extends Entity
+class Room extends Entity
 {
 
     /**
@@ -27,12 +26,8 @@ class Movie extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'description' => true,
-        'duration' => true,
+        'capacity' => true,
         'created' => true,
-        'modified' => true,
-        'showtimes' => true
-
-
+        'modified' => true
     ];
 }

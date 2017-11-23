@@ -13,6 +13,7 @@
         <li><?= $this->Html->link(__('New Movie'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Showtimes'), ['controller' => 'Showtimes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Showtime'), ['controller' => 'Showtimes', 'action' => 'add']) ?> </li>
+
     </ul>
 </nav>
 <div class="movies view large-9 medium-8 columns content">
@@ -43,6 +44,7 @@
         <h4><?= __('Description') ?></h4>
         <?= $this->Text->autoParagraph(h($movie->description)); ?>
     </div>
+<<<<<<< HEAD
     <div class="related">
         <h4><?= __('Related Showtimes') ?></h4>
         <?php if (!empty($movie->showtimes)): ?>
@@ -76,4 +78,6 @@
         </table>
         <?php endif; ?>
     </div>
+=======
+>>>>>>> parent of f8c29a0... remove useless code
 </div>
