@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Rooms Model
  *
- * @property |\Cake\ORM\Association\HasMany $Showtimes
+ * @property \App\Model\Table\ShowtimesTable|\Cake\ORM\Association\HasMany $Showtimes
  *
  * @method \App\Model\Entity\Room get($primaryKey, $options = [])
  * @method \App\Model\Entity\Room newEntity($data = null, array $options = [])

@@ -11,6 +11,8 @@ use Cake\ORM\Entity;
  * @property int $capacity
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ *
+ * @property \App\Model\Entity\Showtime[] $showtimes
  */
 class Room extends Entity
 {
@@ -28,6 +30,7 @@ class Room extends Entity
         'name' => true,
         'capacity' => true,
         'created' => true,
-        'modified' => true
+        'modified' => true,
+        'showtimes' => true
     ];
 }

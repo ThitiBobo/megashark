@@ -9,11 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Movies Model
  *
-<<<<<<< HEAD
  * @property \App\Model\Table\ShowtimesTable|\Cake\ORM\Association\HasMany $Showtimes
-=======
- * @property |\Cake\ORM\Association\HasMany $Showtimes
->>>>>>> parent of f8c29a0... remove useless code
  *
  * @method \App\Model\Entity\Movie get($primaryKey, $options = [])
  * @method \App\Model\Entity\Movie newEntity($data = null, array $options = [])
@@ -75,6 +71,11 @@ class MoviesTable extends Table
             ->integer('duration')
             ->requirePresence('duration', 'create')
             ->notEmpty('duration');
+
+        $validator
+            ->dateTime('release_date')
+            ->requirePresence('release_date', 'create')
+            ->notEmpty('release_date');
 
         return $validator;
     }
