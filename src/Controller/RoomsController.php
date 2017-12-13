@@ -36,10 +36,10 @@ class RoomsController extends AppController
     public function view($id = null)
     {
         $room = $this->Rooms->get($id, []);
-        $showtimes = $this->Rooms->Showtimes->find('list');
     
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
+        $showtimes = $this->Rooms->Showtimes->find();
         $this->set('showtimes', $showtimes);
     }
 

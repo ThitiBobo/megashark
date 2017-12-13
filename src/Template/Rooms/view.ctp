@@ -42,7 +42,9 @@
     <div class="related">
         <h4><?= __('Related Showtimes') ?></h4>
         <?php foreach($showtimes as $showtime): ?>
-        <li><? h($showtime)></li>
+            <tr> 
+                <td><?= $this->Number->format($showtime->) ?></td>
+            </tr>
         <?php endforeach; ?>
     </div>
 </div>
