@@ -36,11 +36,25 @@ class RoomsController extends AppController
     public function view($id = null)
     {
         $room = $this->Rooms->get($id, []);
+        
+        $monday = new \DateTime('first day of this week');
+        $sunday = new \DateTime('last day of this week');
     
-        $this->set('room', $room);
+        
+        $showtimes = $this->Rooms->Showtimes->find()->contain('Movies','Rooms')
+            ->where(['room_id' => $id])
+            ->andwhere(['start >=' => $monday])
+            ->andwhere(['start <=' => $sunday]);
+            
+        $showtimesThisWeek = [];
+        foreach($showtimes as $showtime){
+            $showtimesThisWeek[$showtime->start->format('N')][] = $showtime;
+        }
+        
         $this->set('_serialize', ['room']);
-        $showtimes = $this->Rooms->Showtimes->find();
+        $this->set('showtimesThisWeek',$showtimesThisWeek);
         $this->set('showtimes', $showtimes);
+        $this->set('room', $room);
     }
 
     /**
